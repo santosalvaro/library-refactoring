@@ -13,7 +13,7 @@ class Rental:
         self.book = book
         self.days_rented = days_rented
     
-    def get_charge(self, rental: Rental) -> float:
+    def get_charge(self) -> float:
         
         amount = 0
         
@@ -23,7 +23,7 @@ class Rental:
             if self.days_rented > 2:
                 amount += (self.days_rented - 2) * 1.5
         elif self.book.price_code == Book.NEW_RELEASE:
-            amount += rental.days_rented * 3
+            amount += self.days_rented * 3
         elif self.book.price_code == Book.CHILDREN:
             amount += 1.5
             if self.days_rented > 3:
