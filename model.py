@@ -31,17 +31,20 @@ class Client:
         for rental in self.rentals:
             amount = 0
             
-            # determine amounts for each line
-            if rental.book.price_code == Book.REGULAR:
-                amount += 2
-                if rental.days_rented > 2:
-                    amount += (rental.days_rented - 2) * 1.5
-            elif rental.book.price_code == Book.NEW_RELEASE:
-                amount += rental.days_rented * 3
-            elif rental.book.price_code == Book.CHILDREN:
-                amount += 1.5
-                if rental.days_rented > 3:
-                    amount += (rental.days_rented - 3) * 1.5
+    def get_charge(self, rental: Rental) -> float:
+        
+        # determine amounts for each line
+        if rental.book.price_code == Book.REGULAR:
+            amount += 2
+            if rental.days_rented > 2:
+                amount += (rental.days_rented - 2) * 1.5
+        elif rental.book.price_code == Book.NEW_RELEASE:
+            amount += rental.days_rented * 3
+        elif rental.book.price_code == Book.CHILDREN:
+            amount += 1.5
+            if rental.days_rented > 3:
+                amount += (rental.days_rented - 3) * 1.5
+        return amount
 
             # add frequent renter points
             frequent_renter_points += 1
