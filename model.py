@@ -24,7 +24,7 @@ class Client:
 
     def get_charge(self, rental: Rental) -> float:
 
-        amount = 0.0
+        amount = 0
         
         # determine amounts for each line
         if rental.book.price_code == Book.REGULAR:
