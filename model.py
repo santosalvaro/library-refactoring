@@ -47,7 +47,7 @@ class Client:
         result = f"Rental summary for {self.name}\n"
         
         for rental in self.rentals:
-            amount = rental.get_charge(rental)
+            amount = rental.get_charge()
                 
             # add frequent renter points
             frequent_renter_points += 1
