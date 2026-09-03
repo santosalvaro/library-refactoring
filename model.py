@@ -41,7 +41,7 @@ class Rental:
         return self.book.get_charge(self.days_rented)
         
     def get_frequent_renter_points(self) -> int:
-        return self.book.get_charge(self.days_rented)
+        return self.book.get_frequent_renter_points(self.days_rented)
 
 class Client:
 
