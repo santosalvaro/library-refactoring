@@ -7,7 +7,7 @@ class Price:
         return 1
 
 
-class RegulaPrice(Price):
+class RegularPrice(Price):
 
     def get_charge(self, days_rented: int) -> float:
         amount = 2.0
@@ -51,7 +51,7 @@ class Book:
             return NewReleasePrice()
         elif price_code == Book.CHILDREN:
             return ChildrenPrice()
-        return RegulaPrice()
+        return RegularPrice()
 
     def get_charge(self, days_rented: int):
         return self.price.get_charge(days_rented)
